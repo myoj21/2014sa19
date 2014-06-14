@@ -1,13 +1,17 @@
 % Reduced Global matrix에 맞는 Force Vector 만들기
 
-function ReForceVector = MakeForceVector(Force, FixVectorLocation, RowOfFVL);
+function ReForceVector = MakeForceVector(Force, Moment, FixVectorLocation, RowOfFVL);
 
 [RowOfForce ColOfForce] = size(Force);
+[RowOfMoment ColOfMoment] = size(Moment);
 ForceXY = Force(1:RowOfForce-1,1:ColOfForce);
+MomentZ = Moment(RowOfMoment,1:ColOfMoment);
+ForAndMo = [ForceXY;MomentZ];
+[RowOfFAM ColOfFAM] = size(ForAndMo);
 
 % Force의 값을 하나의 벡터로 만들기
 ForceVector = [];
-for k=1:1:ColOfForce
+for k=1:1:
     tForce(:,:,k) = ForceXY(:,k);
     ForceVector = [ForceVector;tForce(:,:,k)];
 end

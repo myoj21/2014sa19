@@ -12,6 +12,8 @@ for k=1:1:RowOfDis
     str = [ch, charCnum, cxy, '  =  '];
     if (cxy == 'x')
         cxy = 'y';
+    elseif cxy == 'y'
+        cxy = 'm';
     else
             cxy = 'x';
             cnum = cnum + 1;

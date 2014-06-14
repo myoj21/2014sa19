@@ -116,7 +116,7 @@ VectorAppending('F', Fext);
 
 % Member force 구하기
 for k=1:1:NoOfEle
-    MemberF(:,:,k) = SolveMemberF(KeLocal(:,:,k), TMat(:,:,k), Dis(Node(1,k)*3-2:Node(1,k)*3), Dis(Node(2,k)*3-2:Node(2,k)*3));
+    MemberF(:,:,k) = SolveMemberF(KeLocal(:,:,k), TMat(:,:,k), Dis(Node(1,k)*3-2:Node(1,k)*3), Dis(Node(2,k)*3-2:Node(2,k)*3), Dis(Node(3,k)*3-2:Node(3,k)*3));
     % Local Ke, T matrix, 1번 노드점에 해당하는 x,y좌표를 하나의 벡터로, 2번 노드점에 해당하는 x,y좌표를 하나의 벡터로
     strLine = ['MEMBER FORCE ', num2str(k)];
     MatrixAppending(strLine, MemberF(:,:,k));

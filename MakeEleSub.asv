@@ -12,7 +12,7 @@ elseif (k == 2)
 elseif (k == 3)
     tEGMat(Node2*3-2:Node2*3, Node1*3-2:Node1*3) = SubKeMat;
 elseif (k == 4)
-    tEGMat(Node2*3-2:Node2*3, Node2*3-2:Node2*3) = SubKeMat;
+    tEGMat(Node2*3-2:Node2*3, Node2*3-1:Node2*3) = SubKeMat;
 end
 %3X3 사이즈에 맞게 수정
 EleSub = tEGMat;
